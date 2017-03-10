@@ -1,0 +1,31 @@
+{
+  "name": "br-react-utils",
+  "version": "0.1.0",
+  "description": "Utilitários para React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigocipriani/br-react-utils.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-utils",
+    "components",
+    "layout",
+    "template",
+    "material",
+    "material-design",
+    "layout",
+    "design"
+  ],
+  "author": "Rodrigo Cipriani da Rosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigocipriani/br-react-utils/issues"
+  },
+  "homepage": "https://github.com/rodrigocipriani/br-react-utils#readme"
+}

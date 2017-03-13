@@ -6,12 +6,14 @@ export default class Painel extends Component {
 
     static propTypes = {
         titulo: React.PropTypes.string,
+        header: React.PropTypes.any,
         children: React.PropTypes.element,
         isOpen: React.PropTypes.bool,
     };
 
     static defaultProps = {
-        titulo: '',
+        titulo: null,
+        header: null,
         children: <div></div>,
         isOpen: false
     };
@@ -24,13 +26,13 @@ export default class Painel extends Component {
 
     render() {
 
-        const {titulo, children, isOpen} = this.props;
+        const {header, titulo, children, isOpen} = this.props;
 
         return (
 
             <ul className="collapsible" data-collapsible="accordion">
                 <li>
-                    <div className={['collapsible-header', (isOpen && 'active')].join(' ')}>{titulo}</div>
+                    <div className={['collapsible-header', (isOpen && 'active')].join(' ')}>{header ? header : titulo}</div>
                     <div className="collapsible-body white" style={{padding: '0px'}}>
                         {children}
                     </div>

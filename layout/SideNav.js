@@ -13,6 +13,11 @@ class SideNav extends Component {
         super(props);
     }
 
+    // componentWillReceiveProps(nextProps){
+    //     console.log("forceRecise");
+    //     window.dispatchEvent(new Event('resize'));
+    // }
+
     componentDidUpdate() {
         $(".button-collapse").sideNav();
     }
@@ -24,14 +29,16 @@ class SideNav extends Component {
     }
 
     render() {
-        const {sideMenu, sideMenuTitle, sideMenuHeaderBg, avatarImg, avatarTitle, avatarSubTitle, isFixed, children} = this.props;
+        const {sideMenu, sideMenuTitle, sideMenuHeaderBg, avatarImg, avatarTitle, avatarSubTitle, isFixed, isMenuOpen, children} = this.props;
+
+        const isShowMenu = isMenuOpen && isFixed;
 
         return (
-            <div className={['SideNav', (isFixed ? 'container' : '')].join(' ')} style={isFixed ? styles.isFixed : {}}>
-
+            <div className={['SideNav', (isShowMenu ? 'container' : '')].join(' ')} style={isShowMenu ? styles.isFixed : {}}>
+                {/*<a href="#" data-activates="slide-out" className="button-collapse waves-effect waves-light btn">Menu</a>*/}
                 {children}
 
-                <ul id="slide-out" className={['side-nav', (isFixed ? 'fixed' : '')].join(' ')}>
+                <ul id="slide-out" className={['side-nav', (isShowMenu ? 'fixed' : '')].join(' ')}>
                     <li>
                         <div className="userView">
                             <img className="background background-cover" src={sideMenuHeaderBg}/>
@@ -61,6 +68,7 @@ SideNav.propTypes = {
     avatarImg: PropTypes.string,
     avatarTitle: PropTypes.string,
     avatarSubTitle: PropTypes.string,
+    isMenuOpen: PropTypes.bool,
     isFixed: PropTypes.bool
 };
 
@@ -73,6 +81,7 @@ SideNav.defaultProps = {
     avatarImg: '',
     avatarTitle: '',
     avatarSubTitle: '',
+    isMenuOpen: true,
     isFixed: true
 };
 

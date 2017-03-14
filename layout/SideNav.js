@@ -4,6 +4,11 @@ import React, {Component, PropTypes} from 'react';
 const styles = {
     isFixed: {
         paddingLeft: 300
+    },
+    sideMenuTitle: {
+        paddingLeft: '10px',
+        color: '#333',
+        textShadow: 'rgb(224, 224, 224) 1px 1px 0px'
     }
 };
 
@@ -34,7 +39,8 @@ class SideNav extends Component {
         const isShowMenu = isMenuOpen && isFixed;
 
         return (
-            <div className={['SideNav', (isShowMenu ? 'container' : '')].join(' ')} style={isShowMenu ? styles.isFixed : {}}>
+            <div className={['SideNav', (isShowMenu ? 'container' : '')].join(' ')}
+                 style={isShowMenu ? styles.isFixed : {}}>
                 {/*<a href="#" data-activates="slide-out" className="button-collapse waves-effect waves-light btn">Menu</a>*/}
                 {children}
 
@@ -49,7 +55,7 @@ class SideNav extends Component {
                             <a href="#!email"><span className="white-text email">{avatarSubTitle}</span></a>
                         </div>
                     </li>
-                    <li><h5 style={{paddingLeft: '10px'}}>{sideMenuTitle}</h5></li>
+                    <li className="white"><a style={{fontSize: '1.5em'}}>{sideMenuTitle}</a></li>
                     <li>
                         {sideMenu}
                     </li>
@@ -63,7 +69,7 @@ SideNav.propTypes = {
     modoApresentacao: PropTypes.bool,
     children: PropTypes.any,
     sideMenu: PropTypes.any,
-    sideMenuTitle: PropTypes.string,
+    sideMenuTitle: PropTypes.any,
     sideMenuHeaderBg: PropTypes.string,
     avatarImg: PropTypes.string,
     avatarTitle: PropTypes.string,

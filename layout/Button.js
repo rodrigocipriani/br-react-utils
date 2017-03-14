@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from "react";
 
 export default class Col extends Component{
     static propTypes = {
-        children: PropTypes.object
+        children: PropTypes.any
     };
 
     static defaultProps = {

@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 const RouterLink = ({...props, children, href}) => (
 
-    <Link activeClassName='white-text blue darken-1'  className="waves-effect" {...props}>
+    <Link activeClassName='light-blue-text text-darken-4 grey lighten-4'  className="waves-effect" {...props}>
         {children}
     </Link>
 );

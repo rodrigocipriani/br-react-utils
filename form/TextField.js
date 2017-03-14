@@ -1,19 +1,6 @@
 import React, {Component, PropTypes} from "react";
 
-export default class TextField extends Component{
-    static propTypes = {
-        name: PropTypes.string.isRequired,
-        sizes: PropTypes.string,
-        label: PropTypes.string,
-        type: PropTypes.string
-    };
-
-    static defaultProps = {
-        name: null,
-        sizes: '',
-        label: '',
-        type: 'text'
-    };
+class TextField extends Component{
 
     render(){
 
@@ -27,3 +14,19 @@ export default class TextField extends Component{
         );
     }
 }
+
+TextField.propTypes = {
+    name: PropTypes.string.isRequired,
+    sizes: PropTypes.string,
+    label: PropTypes.string,
+    type: PropTypes.string
+};
+
+TextField.defaultProps = {
+    name: null,
+    sizes: '',
+    label: '',
+    type: 'text'
+};
+
+export default TextField;

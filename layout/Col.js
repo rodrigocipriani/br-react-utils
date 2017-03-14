@@ -2,12 +2,12 @@ import React, {Component, PropTypes} from "react";
 
 export default class Col extends Component{
     static propTypes = {
-        // children: PropTypes.object,
+        children: PropTypes.any,
         sizes: PropTypes.string
     };
 
     static defaultProps = {
-        // children: null,
+        children: null,
         sizes: ''
     };
 

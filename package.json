@@ -4,8 +4,8 @@
   "description": "Utilitários para React",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d lib",
-    "start": "babel src -d lib --watch",
+    "build": "babel src -d lib --source-maps",
+    "start": "babel src -d lib --watch --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

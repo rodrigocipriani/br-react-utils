@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["default","layout","form"],"mappings":"AAAA,SAAQA,WAAWC,MAAnB,QAAgC,UAAhC;AACA,SAAQD,WAAWE,IAAnB,QAA8B,QAA9B","file":"index.js","sourcesContent":["export {default as layout} from './layout';\r\nexport {default as form} from './form';\r\n"]}

@@ -18,12 +18,20 @@ class MoedaHelper extends PureComponent {
 
         if (!value) return null;
 
-        format = format || '$ 0,0.00';
+        format = format || '0,0.00';
+        // format = format || '$ 0,0.00';
 
         let resultado = numeral(value).format(format);
 
+        /**
+         * todo alterar versão do numaraljs
+         * bug: https://github.com/adamwdraper/Numeral-js/issues/451
+         *
+         * por enquanto nesta versão não está formatando corretamente o R$
+         *
+         * */
         return (
-            <span>{resultado}</span>
+            <span>R$ {resultado}</span>
         );
 
     }

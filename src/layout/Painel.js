@@ -7,7 +7,7 @@ export default class Painel extends Component {
     static propTypes = {
         titulo: React.PropTypes.string,
         header: React.PropTypes.any,
-        children: React.PropTypes.element,
+        children: React.PropTypes.any,
         isOpen: React.PropTypes.bool,
     };
 

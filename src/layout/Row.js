@@ -11,8 +11,8 @@ export default class Row extends Component{
 
     render(){
 
-        const {children} = this.props;
+        const { children, className, ...reactProps } = this.props;
 
-        return <div className='row'>{children}</div>;
+        return <div { ...reactProps} className={'row ' + className}>{children}</div>;
     }
 }

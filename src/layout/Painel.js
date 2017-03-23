@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from "react";
+import React, {PureComponent, PropTypes} from "react";
 import 'materialize-css/bin/materialize.css';
 import 'materialize-css/bin/materialize.js';
 
-export default class Painel extends Component {
+export default class Painel extends PureComponent {
 
     static propTypes = {
         titulo: React.PropTypes.string,
@@ -19,6 +19,14 @@ export default class Painel extends Component {
     };
 
     componentDidMount() {
+        this._montaCollapsible()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        this._montaCollapsible()
+    }
+
+    _montaCollapsible(){
         $(document).ready(function () {
             $('.collapsible').collapsible();
         });

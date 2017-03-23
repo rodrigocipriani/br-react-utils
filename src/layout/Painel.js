@@ -22,7 +22,6 @@ export default class Painel extends Component {
         $(document).ready(function () {
             $('.collapsible').collapsible();
         });
-        console.log("Mount!!", this.props.isOpen);
     }
 
     render() {

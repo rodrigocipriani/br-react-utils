@@ -14,13 +14,15 @@ class SnackBarMsgs extends Component {
     static propTypes = {
         // children: PropTypes.object,
         msgs: PropTypes.array.isRequired,
-        closeTimer: PropTypes.number
+        closeTimer: PropTypes.number,
+        onClose: PropTypes.func
     };
 
     static defaultProps = {
         // children: null,
         msgs: [],
-        closeTimer: 5
+        closeTimer: 5,
+        onClose: 5
     };
 
     state = {
@@ -48,8 +50,13 @@ class SnackBarMsgs extends Component {
     };
 
     handleSnackClose = (uuid) => {
+        // retorna a mensagem fechada
+        this.props.onClose(this.state.msgs.filter(msg => {
+            return msg.uuid === uuid;
+        }));
+        // retira a mensagem da lista
         return this.state.msgs.filter(msg => {
-            return msg.uuid != uuid;
+            return msg.uuid !== uuid;
         });
     };
 

@@ -33,7 +33,7 @@ class SnackBarMsgs extends Component {
     componentWillReceiveProps(nextProps) {
         const newMsgs = nextProps.msgs.map((msg, key) => {
             msg.type = msg.tipo || 'info';
-            msg.uuid = new Date().getTime() + key;
+            msg.uuid = msg.uuid || new Date().getTime() + key;
             return msg;
         });
         this.setState({msgs: this.state.msgs.concat(newMsgs)});
@@ -53,7 +53,7 @@ class SnackBarMsgs extends Component {
         // retorna a mensagem fechada
         this.props.onClose(this.state.msgs.filter(msg => {
             return msg.uuid === uuid;
-        }));
+        })[0]);
         // retira a mensagem da lista
         return this.state.msgs.filter(msg => {
             return msg.uuid !== uuid;

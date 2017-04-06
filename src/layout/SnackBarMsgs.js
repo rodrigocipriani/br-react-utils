@@ -22,7 +22,7 @@ class SnackBarMsgs extends Component {
         // children: null,
         msgs: [],
         closeTimer: 5,
-        onClose: 5
+        onClose: null
     };
 
     state = {

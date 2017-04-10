@@ -66,7 +66,6 @@ class SideNav extends Component {
 }
 
 SideNav.propTypes = {
-    modoApresentacao: PropTypes.bool,
     children: PropTypes.any,
     sideMenu: PropTypes.any,
     sideMenuTitle: PropTypes.any,

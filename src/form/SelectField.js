@@ -24,7 +24,7 @@ class SelectFieldInput extends Component{
         return (
             <SelectField {...this.props} floatingLabelStyle={style.label} floatingLabelText={label} value={value} >
                 {data && data.map((item, key) => (
-                    <MenuItem value={item.value} primaryText={item.text} key={key} />
+                    <MenuItem {...item} value={item.value} primaryText={item.text} key={key}  />
                 ))}
             </SelectField>
 

@@ -7,3 +7,4 @@ numeral.locale('pt-br');
 var NumeralHelper = numeral;
 
 export default NumeralHelper;
+ 

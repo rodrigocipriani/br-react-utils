@@ -34,7 +34,7 @@ class SideNav extends Component {
     }
 
     render() {
-        const {sideMenu, sideMenuTitle, sideMenuHeaderBg, avatarImg, avatarTitle, avatarSubTitle, isFixed, isMenuOpen, children} = this.props;
+        const {sideMenu, sideMenuTitle, sideMenuHeaderBg, avatarImg, avatarTitle, avatarSubTitle, isFixed, isMenuOpen, children, sideMenuFooter} = this.props;
 
         const isShowMenu = isMenuOpen && isFixed;
 
@@ -54,12 +54,16 @@ class SideNav extends Component {
                             <a href="#!name"><span className="white-text name">{avatarTitle}</span></a>
                             <a href="#!email"><span className="white-text email">{avatarSubTitle}</span></a>
                         </div>
+                        <div style={{position: 'absolute', bottom: 50, width: '100%'}}>
+                            <div style={{width: '100%', textAlign: 'right'}}>{sideMenuFooter}</div>
+                        </div>
                     </li>
                     <li className="white"><a style={{fontSize: '1.5em'}}>{sideMenuTitle}</a></li>
                     <li>
                         {sideMenu}
                     </li>
                 </ul>
+
             </div>
         );
     }
@@ -69,6 +73,7 @@ SideNav.propTypes = {
     children: PropTypes.any,
     sideMenu: PropTypes.any,
     sideMenuTitle: PropTypes.any,
+    sideMenuFooter: PropTypes.any,
     sideMenuHeaderBg: PropTypes.string,
     avatarImg: PropTypes.string,
     avatarTitle: PropTypes.string,
@@ -81,6 +86,7 @@ SideNav.defaultProps = {
     modoApresentacao: false,
     children: <div>Carregando...</div>,
     sideMenuTitle: '',
+    sideMenuFooter: null,
     sideMenu: null,
     sideMenuHeaderBg: '',
     avatarImg: '',

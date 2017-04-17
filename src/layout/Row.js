@@ -13,6 +13,8 @@ export default class Row extends Component{
 
         const { children, className, ...reactProps } = this.props;
 
-        return <div { ...reactProps} className={'row ' + className}>{children}</div>;
+        const classNameProps = className ? className + ' row' : 'row';
+
+        return <div { ...reactProps} className={classNameProps}>{children}</div>;
     }
 }

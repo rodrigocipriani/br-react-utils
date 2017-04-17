@@ -36,6 +36,7 @@ const style = {
     label: {
         fontSize: '1.5em',
         color: '#666',
+        left: 0
     }
 };
 

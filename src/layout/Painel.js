@@ -1,51 +1,57 @@
 import React, {PureComponent, PropTypes} from "react";
 import 'materialize-css/bin/materialize.css';
-import 'materialize-css/bin/materialize.js';
+// import 'materialize-css/bin/materialize.js';
 
-export default class Painel extends PureComponent {
+class Painel extends PureComponent {
 
-    static propTypes = {
-        titulo: React.PropTypes.string,
-        header: React.PropTypes.any,
-        children: React.PropTypes.any,
-        isOpen: React.PropTypes.bool,
-    };
+    constructor(props){
+        super(props);
 
-    static defaultProps = {
-        titulo: null,
-        header: null,
-        children: <div></div>,
-        isOpen: false
-    };
+        this.state = {
+            isOpen: props.isOpen
+        };
+    }
 
     componentDidMount() {
-        this._montaCollapsible();
+        // this._montaCollapsible();
     }
 
     componentDidUpdate(prevProps, prevState) {
-        this._montaCollapsible();
-        if(prevProps.isOpen !== this.props.isOpen){
+        // this._montaCollapsible();
+        if(prevState.isOpen !== this.state.isOpen){
             // chamada forçada par ao resize, pois tem componentes que necessitam se reorganizar
             window.dispatchEvent(new Event('resize'));
         }
     }
 
-    _montaCollapsible(){
-        $(document).ready(function () {
-            $('.collapsible').collapsible();
-        });
-    }
+    // _montaCollapsible(){
+    //     $(document).ready(function () {
+    //         $('.collapsible').collapsible();
+    //     });
+    // }
+
+    _handleHeaderClick = () => {
+        // console.log('this.state.isOpen', this.state.isOpen);
+        this.setState({isOpen: !this.state.isOpen});
+    };
 
     render() {
 
-        const {header, titulo, children, isOpen} = this.props;
+        // todo : Fazer animação quando abrir e fechar sem Jquery
 
+        const {header, titulo, children,} = this.props;
+        const {isOpen} = this.state;
+
+        const display = isOpen ? 'block' : 'none';
+
+        // console.log('isOpen', isOpen);
+        // console.log('display', display);
         return (
 
-            <ul className="collapsible" data-collapsible="accordion">
+            <ul onClick={this._handleHeaderClick} className="collapsible2" data-collapsible="accordion">
                 <li>
                     <div className={['collapsible-header', (isOpen && 'active')].join(' ')}>{header ? header : titulo}</div>
-                    <div className="collapsible-body white" style={{padding: '0px'}}>
+                    <div className="collapsible-body white animate" style={{padding: '0px', display: display}}>
                         {children}
                     </div>
                 </li>
@@ -53,3 +59,19 @@ export default class Painel extends PureComponent {
         );
     }
 }
+
+Painel.propTypes = {
+    titulo: React.PropTypes.string,
+    header: React.PropTypes.any,
+    children: React.PropTypes.any,
+    isOpen: React.PropTypes.bool,
+};
+
+Painel.defaultProps = {
+    titulo: null,
+    header: null,
+    children: <div></div>,
+    isOpen: false
+};
+
+export default Painel;

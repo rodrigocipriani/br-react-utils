@@ -19,11 +19,15 @@ export default class Painel extends PureComponent {
     };
 
     componentDidMount() {
-        this._montaCollapsible()
+        this._montaCollapsible();
     }
 
     componentDidUpdate(prevProps, prevState) {
-        this._montaCollapsible()
+        this._montaCollapsible();
+        if(prevProps.isOpen !== this.props.isOpen){
+            // chamada forçada par ao resize, pois tem componentes que necessitam se reorganizar
+            window.dispatchEvent(new Event('resize'));
+        }
     }
 
     _montaCollapsible(){

@@ -48,9 +48,9 @@ class Painel extends PureComponent {
         // console.log('display', display);
         return (
 
-            <ul onClick={this._handleHeaderClick} className="collapsible2" data-collapsible="accordion">
+            <ul className="collapsible2" data-collapsible="accordion">
                 <li>
-                    <div className={['collapsible-header', (isOpen && 'active')].join(' ')}>{header ? header : titulo}</div>
+                    <div onClick={this._handleHeaderClick} className={['collapsible-header', (isOpen && 'active')].join(' ')}>{header ? header : titulo}</div>
                     <div className="collapsible-body white animate" style={{padding: '0px', display: display}}>
                         {children}
                     </div>

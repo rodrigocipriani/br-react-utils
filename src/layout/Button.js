@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from "react";
 
-export default class Col extends Component{
+export default class Button extends Component{
     static propTypes = {
         children: PropTypes.any
     };

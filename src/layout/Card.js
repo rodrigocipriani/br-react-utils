@@ -1,19 +1,6 @@
 import React, {Component, PropTypes} from "react";
 
 class Card extends Component{
-    static propTypes = {
-        children: React.PropTypes.any,
-        className: PropTypes.string,
-        title: PropTypes.string,
-        actions: PropTypes.any
-    };
-
-    static defaultProps = {
-        children: null,
-        className: '',
-        title: '',
-        actions: ''
-    };
 
     render(){
 
@@ -32,5 +19,19 @@ class Card extends Component{
         );
     }
 }
+
+Card.propTypes = {
+    children: React.PropTypes.any,
+    className: PropTypes.string,
+    title: PropTypes.string,
+    actions: PropTypes.any
+};
+
+Card.defaultProps = {
+    children: null,
+    className: '',
+    title: '',
+    actions: ''
+};
 
 export default Card;

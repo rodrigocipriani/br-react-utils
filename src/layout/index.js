@@ -2,6 +2,7 @@ export {default as Aviso} from './Aviso';
 export {default as Button} from './Button';
 export {default as Card} from './Card';
 export {default as Col} from './Col';
+export {default as Container} from './Container';
 export {FabButton as FabButton} from './FabButton';
 export {FabButtonOption as FabButtonOption} from './FabButton';
 export {default as HorizontalRule} from './HorizontalRule';

@@ -36,6 +36,7 @@
     "material-ui": "^0.17.0",
     "materialize-css": "^0.97.8",
     "numeral": "^2.0.4",
+    "prop-types": "^15.5.10",
     "react": "^15.4.0",
     "react-addons-update": "^15.4.2",
     "react-dom": "^15.4.0",

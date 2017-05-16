@@ -1,13 +1,13 @@
 import React from 'react';
 // import {Link} from 'react-router';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
+    // {/*<Link activeClassName='light-blue-text text-darken-4 grey lighten-4'  className="waves-effect" {...props}>*/}
+    //     {/*{children}*/}
+    // {/*</Link>*/}
 const RouterLink = ({...props, children, href}) => (
-
-    <Link activeClassName='light-blue-text text-darken-4 grey lighten-4'  className="waves-effect" {...props}>
-        {children}
-    </Link>
+    <div>deprecated</div>
 );
 
 const css = {

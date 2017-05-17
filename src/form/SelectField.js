@@ -8,9 +8,9 @@ class SelectFieldInput extends Component{
     static propTypes = {
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         label: PropTypes.string,
-        data: PropTypes.arrayOf(React.PropTypes.shape({
-            value: React.PropTypes.number.isRequired,
-            text: React.PropTypes.string.isRequired,
+        data: PropTypes.arrayOf(PropTypes.shape({
+            value: PropTypes.number.isRequired,
+            text: PropTypes.string.isRequired,
         }))
     };
 

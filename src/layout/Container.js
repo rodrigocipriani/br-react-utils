@@ -10,7 +10,7 @@ class Container extends Component {
     }
 }
 Container.propTypes = {
-    children: React.PropTypes.any,
+    children: PropTypes.any,
     sizes   : PropTypes.string
 };
 

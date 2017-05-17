@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Col extends Component{
     static propTypes = {
-        children: React.PropTypes.any,
+        children: PropTypes.any,
         sizes: PropTypes.string
     };
 

@@ -22,7 +22,7 @@ class Card extends Component{
 }
 
 Card.propTypes = {
-    children: React.PropTypes.any,
+    children: PropTypes.any,
     className: PropTypes.string,
     title: PropTypes.string,
     actions: PropTypes.any

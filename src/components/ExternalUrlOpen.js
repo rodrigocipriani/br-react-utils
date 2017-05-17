@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import {STATIC_SERVER_URL} from 'config';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { STATIC_SERVER_URL } from 'config';
 
 class ExternalUrlOpen extends Component {
 
     static propTypes = {
-        url: React.PropTypes.string.isRequired
+        url: PropTypes.string.isRequired
     };
 
     static defaultProps = {
@@ -15,15 +16,15 @@ class ExternalUrlOpen extends Component {
         height: '500px'
     };
 
-    wait = false;
+    wait        = false;
     elementoPai = 'document';
-    altura = null;
+    altura      = null;
 
     constructor(props) {
         super(props);
     }
 
-    shouldComponentUpdate(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.url !== nextProps.url
             || this.state.height !== nextState.height;
     }
@@ -50,7 +51,7 @@ class ExternalUrlOpen extends Component {
 
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         window.removeEventListener('resize', this.redimenciona);
     }
 
@@ -66,7 +67,7 @@ class ExternalUrlOpen extends Component {
         } else {
 
             // let footerHeight = $("footer").outerHeight();
-            let footerHeight = 0;
+            let footerHeight   = 0;
             let descontoAltura = 0;
             this.elementosDescontarTamanho.forEach(elemento => {
                 descontoAltura = descontoAltura + $(elemento).outerHeight();
@@ -80,7 +81,7 @@ class ExternalUrlOpen extends Component {
 
             altura = bodyHeight - (footerHeight + descontoAltura + temp) + 'px';
         }
-console.log(altura);
+        console.log(altura);
         this.setState({height: altura});
         // $('#pageContainerObject').css('height', altura);
         this.wait = false;
@@ -89,7 +90,7 @@ console.log(altura);
 
     render() {
 
-        let {url} = this.props;
+        let {url}    = this.props;
         let {height} = this.state;
 
         return (

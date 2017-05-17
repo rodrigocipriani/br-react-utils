@@ -15,8 +15,8 @@ class Link extends Component {
 
 
 Link.propTypes = {
-    href: React.PropTypes.string,
-    children: React.PropTypes.any
+    href: PropTypes.string,
+    children: PropTypes.any
 };
 
 Link.defaultProps = {

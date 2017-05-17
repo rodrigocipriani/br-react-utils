@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 class DataHelper extends PureComponent {
@@ -26,8 +27,8 @@ class DataHelper extends PureComponent {
 
 
 DataHelper.propTypes = {
-    value: React.PropTypes.any,
-    format: React.PropTypes.string
+    value: PropTypes.any,
+    format: PropTypes.string
 };
 
 DataHelper.defaultProps = {

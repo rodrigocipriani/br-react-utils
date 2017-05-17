@@ -62,10 +62,10 @@ class Painel extends PureComponent {
 }
 
 Painel.propTypes = {
-    titulo: React.PropTypes.string,
-    header: React.PropTypes.any,
-    children: React.PropTypes.any,
-    isOpen: React.PropTypes.bool,
+    titulo: PropTypes.string,
+    header: PropTypes.any,
+    children: PropTypes.any,
+    isOpen: PropTypes.bool,
 };
 
 Painel.defaultProps = {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-console.error('DEPRECATED (Paginator.js) - Usar o br-react-utils. [Observar versão do router]');
-
 class Paginator extends Component {
 
   handleChangePage = (pageNumber) => {

@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 var numeral = require('numeral');
 var language = require('numeral/locales/pt-br');
 
@@ -39,8 +40,8 @@ class MoedaHelper extends PureComponent {
 
 
 MoedaHelper.propTypes = {
-    value: React.PropTypes.any,
-    format: React.PropTypes.string
+    value: PropTypes.any,
+    format: PropTypes.string
 };
 
 MoedaHelper.defaultProps = {

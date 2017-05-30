@@ -1,4 +1,5 @@
-import React, {PureComponent} from 'react'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import Highcharts from 'highcharts';
 
@@ -6,8 +7,8 @@ import Highcharts from 'highcharts';
 class Grafico extends PureComponent {
 
     static propTypes = {
-        series: React.PropTypes.array.isRequired,
-        modoApresentacao: React.PropTypes.bool
+        series          : PropTypes.array.isRequired,
+        modoApresentacao: PropTypes.bool
     };
 
     static defaultProps = {
@@ -18,7 +19,7 @@ class Grafico extends PureComponent {
 
     constructor(props) {
         super(props);
-        this.chart = null;
+        this.chart   = null;
         this.modules = [];
 
         this.id = "grafico" + Math.random();
@@ -28,13 +29,13 @@ class Grafico extends PureComponent {
         };
     }
 
-    getCss(){
+    getCss() {
         const css = {
             fontSize: '12px'
         };
-        if(this.props.modoApresentacao){
+        if (this.props.modoApresentacao) {
             css.fontSize = '18px';
-        }else{
+        } else {
 
         }
         return css;
@@ -50,18 +51,18 @@ class Grafico extends PureComponent {
             });
         }
 
-        let _self = this;
+        let _self    = this;
         const config = {
-            chart: {
+            chart      : {
                 zoomType: 'xy'
             },
-            title: {
+            title      : {
                 text: ''
             },
-            xAxis: [{
+            xAxis      : [{
                 categories: this.props.categories,
-                crosshair: true,
-                labels: {
+                crosshair : true,
+                labels    : {
                     style: {
                         fontSize: this.getCss().fontSize,
                         font    : this.getCss().fontSize,
@@ -69,14 +70,14 @@ class Grafico extends PureComponent {
                     }
                 },
             }],
-            yAxis: [],
-            tooltip: {
+            yAxis      : [],
+            tooltip    : {
                 shared: true
             },
-            credits: {
+            credits    : {
                 enabled: false
             },
-            legend: {
+            legend     : {
                 itemStyle: {
                     fontSize: this.getCss().fontSize,
                     font    : this.getCss().fontSize,
@@ -97,19 +98,19 @@ class Grafico extends PureComponent {
 
         this.props.series.forEach((serie, i) => {
             config.yAxis.push({
-                labels: {
+                labels  : {
                     format: '%',
-                    style: {
+                    style : {
                         fontSize: this.getCss().fontSize,
                         font    : this.getCss().fontSize,
                         color   : Highcharts.getOptions().colors[1]
                     }
                 },
-                title: {
-                    text: serie.name,
+                title   : {
+                    text : serie.name,
                     style: {
                         fontSize: this.getCss().fontSize,
-                        color: Highcharts.getOptions().colors[1]
+                        color   : Highcharts.getOptions().colors[1]
                     }
                 },
                 opposite: i > 0,
@@ -139,27 +140,27 @@ class Grafico extends PureComponent {
 
         console.debug("aaaaa", this);
         this.options.yAxis[0].labels.style = {
-            fontSize : this.getCss().fontSize,
-            font     : this.getCss().fontSize
+            fontSize: this.getCss().fontSize,
+            font    : this.getCss().fontSize
         };
 
         this.options.xAxis[0].labels.style = {
-            fontSize : this.getCss().fontSize,
-            font     : this.getCss().fontSize
+            fontSize: this.getCss().fontSize,
+            font    : this.getCss().fontSize
         };
 
         this.options.yAxis[0].title.style = {
-            fontSize : this.getCss().fontSize,
+            fontSize: this.getCss().fontSize,
         };
 
         this.options.yAxis[1].title.style = {
-            fontSize : this.getCss().fontSize,
+            fontSize: this.getCss().fontSize,
         };
 
         // this.options.series[1].dataLabels.style.fontSize = '42px';
 
 
-        this.options.legend =  {
+        this.options.legend = {
             itemStyle: {
                 fontSize: this.getCss().fontSize,
                 font    : this.getCss().fontSize,

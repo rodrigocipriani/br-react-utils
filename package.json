@@ -36,6 +36,7 @@
     "material-ui": "^0.17.0",
     "materialize-css": "^0.97.8",
     "numeral": "^2.0.4",
+    "prop-types": "^15.5.10",
     "react": "^15.4.0",
     "react-addons-update": "^15.4.2",
     "react-dom": "^15.4.0",
@@ -43,6 +44,11 @@
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
+    "eslint": "^3.10.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.7.2",
     "babel-eslint": "^7.1.0",

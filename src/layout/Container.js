@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Container extends Component {
     render() {
@@ -9,7 +10,7 @@ class Container extends Component {
     }
 }
 Container.propTypes = {
-    children: React.PropTypes.any,
+    children: PropTypes.any,
     sizes   : PropTypes.string
 };
 

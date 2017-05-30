@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { STATIC_SERVER_URL } from 'config';
 
 class ExternalUrlOpen extends Component {
 
@@ -30,17 +29,16 @@ class ExternalUrlOpen extends Component {
     }
 
     componentDidMount() {
-        console.log('fdsa ');
 
         this.redimenciona();
         let me = this;
 
-        $(window).addEventListener("resize", e => {
-            console.log(e);
-        });
-        $(window).resize(function () {
-            console.log(e);
-        });
+        // $(window).addEventListener("resize", e => {
+        //     console.log(e);
+        // });
+        // $(window).resize(function () {
+        //     console.log(e);
+        // });
 
         // $(window).resize(function() {
         //     if (!this.wait) {
@@ -56,8 +54,6 @@ class ExternalUrlOpen extends Component {
     }
 
     redimenciona(e) {
-        console.log('rodrigo ');
-
 
         let bodyHeight = $(this.elementoPai).outerHeight();
 
@@ -81,7 +77,6 @@ class ExternalUrlOpen extends Component {
 
             altura = bodyHeight - (footerHeight + descontoAltura + temp) + 'px';
         }
-        console.log(altura);
         this.setState({height: altura});
         // $('#pageContainerObject').css('height', altura);
         this.wait = false;

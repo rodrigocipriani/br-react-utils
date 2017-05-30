@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const paddingLeft = 300;
 const maxWidth = 1200 + paddingLeft;
